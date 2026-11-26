@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { NestedScrollComponent } from './nested-scroll.component';
-import { defaultPageScrollConfig, NGXPS_CONFIG } from 'ngx-page-scroll-core';
+import { defaultPageScrollConfig, NGXPS_CONFIG } from '@solidexpert/ngx-page-scroll-core';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatCardModule } from '@angular/material/card';
 import { DummyContentComponent } from '../dummy-content/dummy-content.component';

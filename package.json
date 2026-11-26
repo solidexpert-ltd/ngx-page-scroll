@@ -2,10 +2,10 @@
   "name": "ngx-page-scroll-demo",
   "version": "0.0.0",
   "scripts": {
-    "build": "ng build",
-    "build:app": "ng build --configuration production",
+    "build": "npm run build:lib && npm run build:app",
+    "build:app": "ng build ngx-page-scroll-demo --configuration production",
     "build:lib": "ng build ngx-page-scroll-core --configuration production && ng build ngx-page-scroll --configuration production && npm run copy:readme",
-    "copy:readme": "copyfiles README.md dist/ngx-page-scroll && copyfiles README.md dist/ngx-page-scroll-core",
+    "copy:readme": "copyfiles README.md LICENSE dist/ngx-page-scroll && copyfiles README.md LICENSE dist/ngx-page-scroll-core",
     "commit": "git-cz",
     "e2e": "cypress run",
     "e2e:open": "cypress open",
@@ -14,34 +14,34 @@
     "prerelease:lib": "ng lint && ng test --no-watch && npm run build:lib",
     "release:lib": "cd dist/ngx-page-scroll-core && npm publish && cd ../ngx-page-scroll && npm publish",
     "start": "ng serve",
-    "test": "ng test"
+    "test": "ng test ngx-page-scroll-core --watch=false --browsers=ChromeHeadlessCI && ng test ngx-page-scroll --watch=false --browsers=ChromeHeadlessCI && ng test ngx-page-scroll-demo --watch=false --browsers=ChromeHeadlessCI"
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^22.0.6",
-    "@angular/cdk": "^22.0.4",
-    "@angular/common": "^22.0.6",
-    "@angular/compiler": "^22.0.6",
-    "@angular/core": "^22.0.6",
-    "@angular/forms": "^22.0.6",
-    "@angular/material": "^22.0.4",
-    "@angular/platform-browser": "^22.0.6",
-    "@angular/platform-browser-dynamic": "^22.0.6",
-    "@angular/router": "^22.0.6",
+    "@angular/animations": "22.3.0",
+    "@angular/cdk": "22.3.0",
+    "@angular/common": "22.3.0",
+    "@angular/compiler": "22.3.0",
+    "@angular/core": "22.3.0",
+    "@angular/forms": "22.3.0",
+    "@angular/material": "22.3.0",
+    "@angular/platform-browser": "22.3.0",
+    "@angular/platform-browser-dynamic": "22.3.0",
+    "@angular/router": "22.3.0",
     "normalize.css": "^8.0.1",
-    "rxjs": "~7.5.2",
+    "rxjs": "^7.8.2",
     "tslib": "^2.6.2",
-    "zone.js": "~0.16.0"
+    "zone.js": "~0.16.3"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^22.0.6",
+    "@angular-devkit/build-angular": "22.3.0",
     "@angular-eslint/builder": "^22.1.0",
     "@angular-eslint/eslint-plugin": "^22.1.0",
     "@angular-eslint/eslint-plugin-template": "^22.1.0",
     "@angular-eslint/schematics": "^22.1.0",
     "@angular-eslint/template-parser": "^22.1.0",
-    "@angular/cli": "^22.0.6",
-    "@angular/compiler-cli": "^22.0.6",
+    "@angular/cli": "22.3.0",
+    "@angular/compiler-cli": "22.3.0",
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-conventional": "^12.1.4",
     "@eslint/eslintrc": "^3.3.6",
@@ -63,7 +63,7 @@
     "karma-coverage-istanbul-reporter": "~3.0.2",
     "karma-jasmine": "~4.0.1",
     "karma-jasmine-html-reporter": "^1.7.0",
-    "ng-packagr": "^22.0.1",
+    "ng-packagr": "22.3.0",
     "ts-node": "~10.9.2",
     "typescript": "~6.0.3",
     "typescript-eslint": "^8.63.0",
@@ -83,5 +83,8 @@
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
+  },
+  "engines": {
+    "node": "^22.22.3 || ^24.15.0 || >=26"
   }
 }

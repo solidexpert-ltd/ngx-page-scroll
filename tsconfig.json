@@ -14,11 +14,11 @@
     "target": "ES2022",
     "module": "es2020",
     "paths": {
-      "ngx-page-scroll-core": [
+      "@solidexpert/ngx-page-scroll-core": [
         "dist/ngx-page-scroll-core/ngx-page-scroll-core",
         "dist/ngx-page-scroll-core"
       ],
-      "ngx-page-scroll": [
+      "@solidexpert/ngx-page-scroll": [
         "dist/ngx-page-scroll/ngx-page-scroll",
         "dist/ngx-page-scroll"
       ]

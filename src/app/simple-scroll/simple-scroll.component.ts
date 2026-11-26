@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnInit, DOCUMENT, inject } from '@angular/core';
 
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { EasingLogic, PageScrollService } from 'ngx-page-scroll-core';
+import { EasingLogic, PageScrollService } from '@solidexpert/ngx-page-scroll-core';
 
 @Component({
     selector: 'app-simple-scroll',

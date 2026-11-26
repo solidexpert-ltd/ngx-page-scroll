@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild, DOCUMENT, inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
-import { PageScrollInstance, PageScrollService } from 'ngx-page-scroll-core';
+import { PageScrollInstance, PageScrollService } from '@solidexpert/ngx-page-scroll-core';
 
 @Component({
     selector: 'app-scroll-dialog',

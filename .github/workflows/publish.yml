@@ -1,0 +1,81 @@
+name: Publish to NPM
+
+on:
+  push:
+    branches:
+      - master
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Set publish version
+        env:
+          GITHUB_RUN_NUMBER: ${{ github.run_number }}
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+
+          const root = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+          const raw =
+            (root.devDependencies && root.devDependencies['@angular/core']) ||
+            (root.dependencies && root.dependencies['@angular/core']) ||
+            (root.peerDependencies && root.peerDependencies['@angular/core']);
+          if (!raw) {
+            throw new Error('missing @angular/core');
+          }
+          const angularMajor = String(raw).replace(/^[^0-9]*/, '').split('.')[0];
+          const runNumber = process.env.GITHUB_RUN_NUMBER;
+          if (!runNumber) {
+            throw new Error('GITHUB_RUN_NUMBER is not defined.');
+          }
+          const version = `${angularMajor}.0.${runNumber}`;
+
+          for (const pkgPath of [
+            'dist/ngx-page-scroll-core/package.json',
+            'dist/ngx-page-scroll/package.json',
+          ]) {
+            const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'));
+            pkg.version = version;
+            fs.writeFileSync(pkgPath, JSON.stringify(pkg, null, 2) + '\n');
+            console.log(`Publish version ${pkg.name}@${version}`);
+          }
+          NODE
+
+      - name: Publish @solidexpert/ngx-page-scroll-core
+        working-directory: dist/ngx-page-scroll-core
+        run: |
+          if [ -n "${NPM_CONFIG_USERCONFIG:-}" ] && [ -f "$NPM_CONFIG_USERCONFIG" ]; then
+            sed -i '/_authToken/d' "$NPM_CONFIG_USERCONFIG"
+          fi
+          unset NODE_AUTH_TOKEN
+          npm publish --access public --tag latest
+
+      - name: Publish @solidexpert/ngx-page-scroll
+        working-directory: dist/ngx-page-scroll
+        run: |
+          if [ -n "${NPM_CONFIG_USERCONFIG:-}" ] && [ -f "$NPM_CONFIG_USERCONFIG" ]; then
+            sed -i '/_authToken/d' "$NPM_CONFIG_USERCONFIG"
+          fi
+          unset NODE_AUTH_TOKEN
+          npm publish --access public --tag latest

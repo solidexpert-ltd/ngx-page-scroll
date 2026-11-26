@@ -2,7 +2,7 @@ import { TestBed, waitForAsync } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTabsModule } from '@angular/material/tabs';
-import { defaultPageScrollConfig, NGXPS_CONFIG } from 'ngx-page-scroll-core';
+import { defaultPageScrollConfig, NGXPS_CONFIG } from '@solidexpert/ngx-page-scroll-core';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {

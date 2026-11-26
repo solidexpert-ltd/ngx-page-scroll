@@ -1,10 +1,10 @@
-# ngx-page-scroll [![npm version](https://img.shields.io/npm/v/ngx-page-scroll.svg?style=flat)](https://www.npmjs.com/package/ngx-page-scroll) [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
+# @solidexpert/ngx-page-scroll [![npm version](https://img.shields.io/npm/v/@solidexpert/ngx-page-scroll.svg?style=flat)](https://www.npmjs.com/package/@solidexpert/ngx-page-scroll) [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
 
 Animated scrolling functionality for angular written in pure typescript with no additional dependencies
 
-[![Build Status](https://github.com/Nolanus/ngx-page-scroll/actions/workflows/main.yml/badge.svg)](https://github.com/Nolanus/ngx-page-scroll/actions/workflows/main.yml)
-[![Known Vulnerabilities](https://snyk.io/test/github/Nolanus/ngx-page-scroll/badge.svg)](https://snyk.io/test/github/Nolanus/ngx-page-scroll)
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/aa10be6ea5654211bb451c6ade2f1ff6)](https://www.codacy.com/gh/Nolanus/ngx-page-scroll/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Nolanus/ngx-page-scroll&amp;utm_campaign=Badge_Grade)
+Maintained by [solidexpert-ltd](https://github.com/solidexpert-ltd). Fork of [Nolanus/ngx-page-scroll](https://github.com/Nolanus/ngx-page-scroll) by Sebastian Fuss. The original MIT license and copyright are unchanged.
+
+[![Build Status](https://github.com/solidexpert-ltd/ngx-page-scroll/actions/workflows/ci.yml/badge.svg)](https://github.com/solidexpert-ltd/ngx-page-scroll/actions/workflows/ci.yml)
 
 ## Features
 
@@ -43,7 +43,8 @@ Install later versions in case your app is not running the very latest angular v
 
 | ngx-page-scroll/ngx-page-scroll-core version | compatible angular version | Documentation                                                               |
 |----------------------------------------------|----------------------------|-----------------------------------------------------------------------------|
-| v17.x                                        | v22                        | [README](README.md)                                                         |
+| @solidexpert 22.0.x                          | v22                        | [README](README.md)                                                         |
+| v17.x                                        | v22                        | [Nolanus v17](https://github.com/Nolanus/ngx-page-scroll/blob/master/README.md) |
 | v16.x                                        | v21                        | [README](https://github.com/Nolanus/ngx-page-scroll/blob/v16.0.0/README.md) |
 | v15.x                                        | v20                        | [README](https://github.com/Nolanus/ngx-page-scroll/blob/v15.0.1/README.md) |
 | v14.x                                        | v19                        | [README](https://github.com/Nolanus/ngx-page-scroll/blob/v14.0.1/README.md) |
@@ -65,13 +66,13 @@ Install later versions in case your app is not running the very latest angular v
 First you need to install the core npm module:
 
 ```sh
-npm install ngx-page-scroll-core --save
+npm install @solidexpert/ngx-page-scroll-core --save
 ```
 
 Then add the `NgxPageScrollModule` to the imports array of your application module:
 
 ```typescript
-import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
+import { NgxPageScrollCoreModule } from '@solidexpert/ngx-page-scroll-core';
 
 @NgModule({
     imports: [
@@ -90,7 +91,7 @@ Using the `PageScrollService#scroll` method you may trigger scroll animations. P
 ```typescript
 import { Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
-import { PageScrollService } from 'ngx-page-scroll-core';
+import { PageScrollService } from '@solidexpert/ngx-page-scroll-core';
 
 export class MyComponent {
  constructor(private pageScrollService: PageScrollService, @Inject(DOCUMENT) private document: any) {
@@ -120,8 +121,8 @@ imports: [
 ]
 ```
 
-Check the [`PageScrollConfig` interface](https://github.com/Nolanus/ngx-page-scroll/blob/master/projects/ngx-page-scroll-core/src/lib/types/page-scroll.config.ts#L3)
-for possible options and their impact. The default values may be found in the [`defaultPageScrollConfig`]([https://github.com/Nolanus/ngx-page-scroll/blob/master/projects/ngx-page-scroll-core/src/lib/provides/config.provider.ts#L6](https://github.com/Nolanus/ngx-page-scroll/blob/master/projects/ngx-page-scroll-core/src/lib/providers/config.provider.ts))
+Check the [`PageScrollConfig` interface](https://github.com/solidexpert-ltd/ngx-page-scroll/blob/master/projects/ngx-page-scroll-core/src/lib/types/page-scroll.config.ts#L3)
+for possible options and their impact. The default values may be found in the [`defaultPageScrollConfig`](https://github.com/solidexpert-ltd/ngx-page-scroll/blob/master/projects/ngx-page-scroll-core/src/lib/providers/config.provider.ts)
 object.
 
 ## Directive
@@ -136,13 +137,13 @@ It utilizes the ngx-page-scroll-core module for that, thus requires it as a peer
 First you need to install the directive npm module:
 
 ```sh
-npm install ngx-page-scroll --save
+npm install @solidexpert/ngx-page-scroll --save
 ```
 
 Then add the `NgxPageScrollModule` to the imports array of your application module:
 
 ```typescript
-import { NgxPageScrollModule } from 'ngx-page-scroll';
+import { NgxPageScrollModule } from '@solidexpert/ngx-page-scroll';
 
 @NgModule({
     imports: [

@@ -7,10 +7,10 @@
       "jasmine"
     ],
     "paths": {
-      "ngx-page-scroll-core": [
+      "@solidexpert/ngx-page-scroll-core": [
         "projects/ngx-page-scroll-core/src/public-api"
       ],
-      "ngx-page-scroll": [
+      "@solidexpert/ngx-page-scroll": [
         "projects/ngx-page-scroll/src/public-api"
       ]
     }

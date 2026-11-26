@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 
-import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
+import { NgxPageScrollCoreModule } from '@solidexpert/ngx-page-scroll-core';
 
 import { NgxPageScrollDirective } from './ngx-page-scroll.directive';
 

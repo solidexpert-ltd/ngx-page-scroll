@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild, DOCUMENT, inject } from '@angular/core';
 
-import { PageScrollInstance, PageScrollService } from 'ngx-page-scroll-core';
+import { PageScrollInstance, PageScrollService } from '@solidexpert/ngx-page-scroll-core';
 
 @Component({
     selector: 'app-namespace-scroll',

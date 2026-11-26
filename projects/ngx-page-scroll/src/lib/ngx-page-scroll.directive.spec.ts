@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { NgxPageScrollDirective } from './ngx-page-scroll.directive';
-import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
+import { NgxPageScrollCoreModule } from '@solidexpert/ngx-page-scroll-core';
 
 describe('NgxPageScrollDirective', () => {
   beforeEach(() => {

@@ -17,7 +17,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
-import { NgxPageScrollModule } from 'ngx-page-scroll';
+import { NgxPageScrollModule } from '@solidexpert/ngx-page-scroll';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';

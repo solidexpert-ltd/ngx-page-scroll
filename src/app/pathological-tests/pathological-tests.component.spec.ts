@@ -1,14 +1,14 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { PathologicalTestsComponent } from './pathological-tests.component';
-import { defaultPageScrollConfig, NGXPS_CONFIG } from 'ngx-page-scroll-core';
+import { defaultPageScrollConfig, NGXPS_CONFIG } from '@solidexpert/ngx-page-scroll-core';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { MatCardModule } from '@angular/material/card';
 import { DummyCardComponent } from '../dummy-card/dummy-card.component';
 import { DummyContentComponent } from '../dummy-content/dummy-content.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
-import { NgxPageScrollDirective } from 'ngx-page-scroll';
+import { NgxPageScrollDirective } from '@solidexpert/ngx-page-scroll';
 
 describe('PathologicalTestsComponent', () => {
   let component: PathologicalTestsComponent;

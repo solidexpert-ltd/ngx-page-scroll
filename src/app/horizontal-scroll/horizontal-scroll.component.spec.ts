@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { HorizontalScrollComponent } from './horizontal-scroll.component';
-import { defaultPageScrollConfig, NGXPS_CONFIG } from 'ngx-page-scroll-core';
+import { defaultPageScrollConfig, NGXPS_CONFIG } from '@solidexpert/ngx-page-scroll-core';
 import { MatCardModule } from '@angular/material/card';
 
 describe('HorizontalScrollComponent', () => {

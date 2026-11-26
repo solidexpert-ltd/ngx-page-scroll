@@ -1,6 +1,6 @@
 {
-  "name": "ngx-page-scroll",
-  "version": "17.0.0",
+  "name": "@solidexpert/ngx-page-scroll",
+  "version": "22.0.0",
   "description": "Convenience directive for animated scrolling functionality for angular written in pure typescript",
   "keywords": [
     "angular",
@@ -17,16 +17,24 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/Nolanus/ngx-page-scroll.git"
+    "url": "git+https://github.com/solidexpert-ltd/ngx-page-scroll.git"
   },
   "bugs": {
-    "url": "https://github.com/Nolanus/ngx-page-scroll/issues"
+    "url": "https://github.com/solidexpert-ltd/ngx-page-scroll/issues"
   },
-  "homepage": "https://github.com/Nolanus/ngx-page-scroll#readme",
+  "homepage": "https://github.com/solidexpert-ltd/ngx-page-scroll#readme",
+  "engines": {
+    "node": "^22.22.3 || ^24.15.0 || >=26"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "peerDependencies": {
-    "ngx-page-scroll-core": "17.0.0",
-    "@angular/common": "^21.0.0 || ^22.0.0",
-    "@angular/core": "^21.0.0 || ^22.0.0"
+    "@solidexpert/ngx-page-scroll-core": "^22.0.0",
+    "@angular/common": "^22.0.0",
+    "@angular/core": "^22.0.0",
+    "@angular/router": "^22.0.0",
+    "rxjs": "^7.8.2"
   },
   "dependencies": {
     "tslib": "^2.6.2"

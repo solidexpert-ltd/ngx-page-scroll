@@ -2,8 +2,8 @@ import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { HomeComponent } from './home.component';
 import { MatCardModule } from '@angular/material/card';
-import { NgxPageScrollDirective } from 'ngx-page-scroll';
-import { NGXPS_CONFIG, defaultPageScrollConfig } from 'ngx-page-scroll-core';
+import { NgxPageScrollDirective } from '@solidexpert/ngx-page-scroll';
+import { NGXPS_CONFIG, defaultPageScrollConfig } from '@solidexpert/ngx-page-scroll-core';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
