@@ -64,18 +64,12 @@ jobs:
 
       - name: Publish @solidexpert/ngx-page-scroll-core
         working-directory: dist/ngx-page-scroll-core
-        run: |
-          if [ -n "${NPM_CONFIG_USERCONFIG:-}" ] && [ -f "$NPM_CONFIG_USERCONFIG" ]; then
-            sed -i '/_authToken/d' "$NPM_CONFIG_USERCONFIG"
-          fi
-          unset NODE_AUTH_TOKEN
-          npm publish --access public --tag latest
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm publish --access public --tag latest
 
       - name: Publish @solidexpert/ngx-page-scroll
         working-directory: dist/ngx-page-scroll
-        run: |
-          if [ -n "${NPM_CONFIG_USERCONFIG:-}" ] && [ -f "$NPM_CONFIG_USERCONFIG" ]; then
-            sed -i '/_authToken/d' "$NPM_CONFIG_USERCONFIG"
-          fi
-          unset NODE_AUTH_TOKEN
-          npm publish --access public --tag latest
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm publish --access public --tag latest
